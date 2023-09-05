@@ -1,11 +1,11 @@
-let hiragana;
-
-hiragana[0] = {symbol: 'あ', sound: 'A'};
-hiragana[1] = {symbol: 'い', sound: 'I'};
-hiragana[2] = {symbol: 'う', sound: 'U'};
-hiragana[3] = {symbol: 'え', sound: 'E'};
-hiragana[4] = {symbol: 'お', sound: 'O'};
-hiragana[5] = {symbol: 'か', sound: 'KA'};
+let hiragana = {
+    "symbol": "あ", "sound": "A",
+    "symbol": "い", "sound": "I",
+    "symbol": "う", "sound": "U",
+    "symbol": "え", "sound": "E",
+    "symbol": "お", "sound": "O",
+    "symbol": "か", "sound": "KA",
+};
 
 let arrSize = hiragana.length;
 
