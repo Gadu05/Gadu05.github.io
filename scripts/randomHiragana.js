@@ -1,3 +1,7 @@
+function letMeCallYou(){
+    alert("Bazinga!!!  you called letMeCallYou");
+}
+
 let hiragana = {
     "symbol": "あ", "sound": "A",
     "symbol": "い", "sound": "I",
@@ -19,6 +23,3 @@ function returnCaractere(){
 
 }
 
-function letMeCallYou(){
-    alert("Bazinga!!!  you called letMeCallYou");
-}
