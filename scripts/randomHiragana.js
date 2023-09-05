@@ -15,6 +15,6 @@ function getRandomInt(max) {
 
 function returnCaractere(){
     
-    document.getElementById("ID_RandHiragana").innerHTML = hiragana[getRandomInt(arrSize).symbol];
+    document.write(hiragana[getRandomInt(arrSize).symbol]);
 
 }
