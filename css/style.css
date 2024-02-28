@@ -5,3 +5,7 @@ body{
     url('https://media.tenor.com/2l4-h42qnmcAAAAi/toothless-dancing-toothless.gif');
     background-color: red;
 }
+
+embed{
+    display: none;
+}
