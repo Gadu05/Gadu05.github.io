@@ -1,4 +1,8 @@
 
+body{
+    background-color: black;
+}
+
 img{
-    margin: 0;
+    margin: none;
 }
