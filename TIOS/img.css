@@ -3,6 +3,7 @@ img{
     display: block;
     float: left;
     clear: both;
+    background-position: center;
 }
 
 div{
