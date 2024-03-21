@@ -1,7 +1,7 @@
 
 img{
     display: block;
-    float: right;
+    float: none;
     clear: both;
     max-width: 950px;
     width: 60%;
