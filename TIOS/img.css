@@ -1,10 +1,11 @@
 
 img{
     display: block;
-    float: none;
+    /*float: none;*/
     clear: both;
     max-width: 950px;
     width: 60%;
+    margin: auto;
 }
 
 div{
