@@ -3,12 +3,14 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script src="scripts/musica.js"></script>
+    <script>
+      window.onload = function() {
+          var audio = document.getElementById('myAudio');
+          audio.play();
+      };
+  </script>
   </head>
   <body>
-    <audio controls autoplay loop>
-      <source src="Port Yoneuve (driftveil city theme) LOOPED best part.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+    <audio controls id="myAudio" src="Port Yoneuve (driftveil city theme) LOOPED best part.mp3"></audio>
   </body>
 </html>
