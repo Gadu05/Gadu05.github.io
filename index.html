@@ -4,10 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script>
-      window.onload = function() {
-          var audio = document.getElementById('myAudio');
-          audio.play();
-      };
+
+      document.body.addEventListener('touchstart', function() {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+        }, { once: true });
+
+      document.body.addEventListener('mousemove', function() {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+        }, { once: true });
+
+
   </script>
   </head>
   <body>
