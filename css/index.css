@@ -1,0 +1,17 @@
+
+body{
+    position: flex;
+    flex-direction: column;
+}
+
+.header{
+    background-color: magenta;
+}
+
+.main{
+    background-color: purple;
+}
+
+.footer{
+    background-color: blue;
+}
