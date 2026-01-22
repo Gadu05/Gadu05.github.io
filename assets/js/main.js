@@ -70,7 +70,7 @@ function statusLabel(status) {
 }
 
 const PROJECT_LIST = Object.entries(window.PROJECTS ?? {}).map(
-  ([slug, data]) => ({ slug, ...data })
+    ([slug, data]) => ({ slug, ...data })
 );
 
 function renderProjects(filter = "todos") {
@@ -89,7 +89,7 @@ function renderProjects(filter = "todos") {
 
         const st = statusLabel(normalizeStatus(p.status));
         const pill = el("span", st.cls, st.text);
-        
+
 
         meta.appendChild(h3);
         meta.appendChild(pill);
@@ -130,11 +130,11 @@ function renderProjects(filter = "todos") {
 }
 
 function normalizeStatus(status) {
-  const s = (status ?? "").toLowerCase();
-  if (s.includes("concl")) return "concluido";
-  if (s.includes("desenv")) return "desenvolvimento";
-  if (s.includes("explor")) return "explorando";
-  return "";
+    const s = (status ?? "").toLowerCase();
+    if (s.includes("concl")) return "concluido";
+    if (s.includes("desenv")) return "desenvolvimento";
+    if (s.includes("explor")) return "explorando";
+    return "";
 }
 
 
@@ -166,18 +166,74 @@ function setupFilters() {
 function setupNavToggle() {
     const toggle = document.querySelector(".nav__toggle");
     const menu = document.getElementById("menu");
+    const nav = document.querySelector(".nav");
     if (!toggle || !menu) return;
 
-    toggle.addEventListener("click", () => {
+    const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+
+    const closeMenu = () => {
+        menu.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+    };
+
+    toggle.addEventListener("click", (e) => {
+        e.stopPropagation(); // evita fechar instantaneamente pelo listener do document
         const open = menu.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", String(open));
     });
+
+    menu.addEventListener("click", (e) => {
+        const link = e.target.closest("a");
+        if (!link) return;
+        closeMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!isMobile()) return;
+        if (nav && nav.contains(e.target)) return;
+        closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+        if (!isMobile()) closeMenu();
+    });
 }
+
+
+function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+    updateThemeIcon();
+}
+
+function setupThemeToggle() {
+    const btn = document.querySelector(".theme-toggle");
+    if (!btn) return;
+
+    const saved = localStorage.getItem("theme");
+    if (saved === "light" || saved === "dark") applyTheme(saved);
+    updateThemeIcon();
+
+    btn.addEventListener("click", () => {
+        const current = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+        applyTheme(current === "light" ? "dark" : "light");
+        updateThemeIcon();
+    });
+}
+
+function updateThemeIcon() {
+    const icon = document.querySelector(".theme-toggle i");
+    if (!icon) return;
+    const isLight = document.documentElement.dataset.theme === "light";
+    icon.className = isLight ? "bi bi-sun" : "bi bi-moon-stars";
+}
+
 
 function init() {
     document.getElementById("year").textContent = String(new Date().getFullYear());
     setupFilters();
     setupNavToggle();
+    setupThemeToggle();
     renderProjects("todos");
 }
 
