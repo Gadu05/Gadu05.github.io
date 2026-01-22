@@ -1,18 +1,178 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-  </head>
-  <body>
-    <div class="header">
-      a
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description"
+    content="Portfólio de Gabriel Eduardo — Desenvolvimento de Software com foco em APIs REST, arquitetura backend e boas práticas." />
+  <title>Gabriel Eduardo | Portfólio</title>
+
+  <meta property="og:title" content="Gabriel Eduardo | Portfólio" />
+  <meta property="og:description" content="Projetos com foco em APIs REST, arquitetura backend, SQL e boas práticas." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#">Gabriel Eduardo</a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+
+      <ul id="menu" class="nav__menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-label="Apresentação">
+      <div class="container hero__grid">
+
+        <div class="hero__photo">
+          <img src="assets/img/gabriel-santos.webp" alt="Foto de Gabriel Eduardo, desenvolvedor de software"
+            loading="lazy" />
+        </div>
+
+        <div>
+          <p class="kicker">Desenvolvimento de Software • Backend/Full Stack</p>
+          <h1>Construo <span class="accent">APIs REST</span> com arquitetura, segurança e boas práticas.</h1>
+          <p class="subtitle">
+            Foco em <strong>Spring Boot/Node.js</strong>, <strong>PostgreSQL</strong>, <strong>JWT</strong>,
+            <strong>Docker</strong> e documentação com <strong>OpenAPI</strong>.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projetos">Ver projetos</a>
+            <a class="btn btn--ghost" href="#contato">Falar comigo</a>
+          </div>
+
+          <ul class="hero__links" aria-label="Links rápidos">
+            <li><a href="https://github.com/Gadu05" target="_blank" rel="noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="mailto:SEUEMAIL@exemplo.com">E-mail</a></li>
+          </ul>
+        </div>
+
+        <div class="hero__card">
+          <h2 class="card-title">Resumo</h2>
+          <p>
+            Bacharel em Ciência da Computação (IFSP), com foco em APIs REST,
+            arquitetura backend e boas práticas de engenharia de software.
+          </p>
+
+          <div class="badges" aria-label="Destaques">
+            <span class="badge">REST</span>
+            <span class="badge">Arquitetura</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Segurança</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2>Sobre</h2>
+        <p>
+          Sou o Gabriel Eduardo e desenvolvo soluções com ênfase em <strong>engenharia de software</strong>:
+          separação de responsabilidades, validação, tratamento de erros, documentação e testes.
+          Meu objetivo é atuar como Desenvolvedor Júnior, com base técnica sólida em backend.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="section section--alt">
+      <div class="container">
+        <h2>Skills</h2>
+
+        <div class="grid grid--3">
+          <article class="panel">
+            <h3>Backend</h3>
+            <ul>
+              <li>Spring Boot ou Node.js (Express)</li>
+              <li>JWT, validação, middleware/filters</li>
+              <li>Swagger / OpenAPI</li>
+              <li>Arquitetura em camadas (Controller/Service/Repository)</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Dados & Infra</h3>
+            <ul>
+              <li>PostgreSQL (modelagem e queries)</li>
+              <li>Docker e docker-compose</li>
+              <li>Migrações (Flyway/Liquibase ou equivalente)</li>
+              <li>Logs e observabilidade básica</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Frontend (apoio)</h3>
+            <ul>
+              <li>React (consumo de API)</li>
+              <li>Componentização e estado</li>
+              <li>Acessibilidade e responsividade</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2>Projetos</h2>
+
+          <div class="filters" aria-label="Filtros de projetos">
+            <button class="chip is-active" type="button" data-filter="todos">Todos</button>
+            <button class="chip" type="button" data-filter="concluido">Concluído</button>
+            <button class="chip" type="button" data-filter="desenvolvimento">Em desenvolvimento</button>
+            <button class="chip" type="button" data-filter="explorando">Explorando</button>
+          </div>
+        </div>
+
+        <div id="projectsGrid" class="grid grid--3" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="contato" class="section section--alt">
+      <div class="container">
+        <h2>Contato</h2>
+        <p>
+          Para oportunidades, colaboração ou feedback técnico:
+        </p>
+
+        <div class="contact">
+          <a class="btn btn--primary" href="mailto:SEUEMAIL@exemplo.com">Enviar e-mail</a>
+          <a class="btn btn--ghost" href="https://github.com/Gadu05" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Gabriel Eduardo. Publicado via GitHub Pages.</p>
+      <p class="muted">Acessível • Responsivo • Conteúdo versionado</p>
     </div>
-    <div class="main">
-      a
-    </div>
-    <div class="footer">
-      a
-    </div>
-  </body>
+  </footer>
+
+  <script src="assets/js/projects.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+
 </html>
